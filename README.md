@@ -9,6 +9,7 @@ bulk check-out flow that follows it. Built on the Field Control Analytics design
 |---|---|
 | `index.html` | Self-contained prototype. No build step, no dependencies, no network calls. |
 | `epic.html` | The epic (description, requirements, affected areas, access, scope). Print to PDF from the browser. |
+| `epic.md` | Same epic as markdown, for pasting into Jira. |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is. |
 
 ## Deploy to GitHub Pages
@@ -51,9 +52,12 @@ python3 -m http.server 8000
    with Edit and Clear, the tab count switched to the group size, an X on each row to
    remove a worker (which also unchecks them in the filter), and the chevron still
    opening the worker profile.
-5. **Check out N workers** → confirmation → success, then back to the unfiltered list.
+5. **Select Zone** opens on "Check out N workers": a zone dropdown, then a zone code
+   dropdown once a zone is picked, each opening a searchable picker. Continue is disabled
+   until both are set.
+6. **Confirmation** states the count, zone and zone code → success, then back to the unfiltered list.
    Checked-out workers drop off the Onsite list. No undo.
-6. **Partial failure** — toggle "Simulate partial failure" above the phone. Successes
+7. **Partial failure** — toggle "Simulate partial failure" above the phone. Successes
    commit; the user returns to the selection screen with only the failed workers
    selected, a "17 of 20 checked out · 3 could not be checked out" summary, and an error
    on each failed row.
